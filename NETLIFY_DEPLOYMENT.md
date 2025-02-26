@@ -75,6 +75,64 @@ Netlify should automatically detect that you're using Vite and suggest the corre
 
 Netlify will automatically rebuild and redeploy your site whenever you push changes to your GitHub repository.
 
+## Redeploying Your Site
+
+### Method 1: Push Changes to GitHub (Recommended)
+
+If your Netlify site is connected to your GitHub repository:
+
+```bash
+# Add all your changes
+git add .
+
+# Commit your changes
+git commit -m "Describe your changes"
+
+# Push to GitHub
+git push
+```
+
+Netlify will automatically detect the new commit and trigger a new build and deployment.
+
+### Method 2: Manual Redeploy from Netlify Dashboard
+
+1. Log in to your Netlify account
+2. Go to your site's dashboard
+3. Click on the "Deploys" tab
+4. Click the "Trigger deploy" button and select "Deploy site"
+
+### Method 3: Using the Redeploy Script
+
+This repository includes a convenient redeploy script:
+
+```bash
+# Make the script executable (first time only)
+chmod +x redeploy.sh
+
+# Run the script
+./redeploy.sh
+```
+
+The script will guide you through the redeployment process, offering options to:
+1. Push to GitHub for automatic deployment
+2. Deploy directly using the Netlify CLI
+
+### Method 4: Deploy from Your Local Machine Using Netlify CLI
+
+```bash
+# Install Netlify CLI (first time only)
+npm install -g netlify-cli
+
+# Log in to Netlify (first time only)
+netlify login
+
+# Link your project (first time only)
+netlify link
+
+# Deploy to production
+netlify deploy --prod
+```
+
 ## Troubleshooting
 
 ### Images Not Displaying
