@@ -71,7 +71,7 @@ const SideNavigation = ({
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed left-0 top-0 h-screen w-20 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col items-center justify-between py-8"
+      className="fixed left-0 top-0 h-screen w-20 bg-white/80 backdrop-blur-lg z-50 border-r border-gray-200/50 shadow-sm flex flex-col items-center justify-between py-8"
     >
       <TooltipProvider>
         <nav className="flex flex-col items-center space-y-6">

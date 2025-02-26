@@ -17,14 +17,44 @@ interface SkillsSectionProps {
 
 const SkillsSection = ({
   skills = [
+    // Frontend
+    { name: "React", level: 95, category: "Frontend" },
+    { name: "TypeScript", level: 90, category: "Frontend" },
+    { name: "NextJS", level: 88, category: "Frontend" },
+    
+    // Backend & Databases
+    { name: "Supabase", level: 85, category: "Backend" },
+    { name: "Convex", level: 82, category: "Backend" },
+    { name: "Azure Functions", level: 80, category: "Backend" },
+    
+    // AI & ML
     { name: "Machine Learning", level: 90, category: "AI" },
     { name: "Natural Language Processing", level: 85, category: "AI" },
     { name: "Computer Vision", level: 80, category: "AI" },
     { name: "Deep Learning", level: 85, category: "AI" },
+    { name: "AI Document Processing", level: 88, category: "AI" },
+    { name: "AI Speech to Text", level: 86, category: "AI" },
+    { name: "MCP (Model Context Providers)", level: 84, category: "AI" },
+    
+    // Automation
+    { name: "AI Webscraping & Crawling", level: 92, category: "Automation" },
+    { name: "AI Voice Automation", level: 88, category: "Automation" },
+    { name: "Power Automate", level: 90, category: "Automation" },
+    { name: "Make.com", level: 85, category: "Automation" },
+    { name: "n8n", level: 82, category: "Automation" },
+    
+    // Microsoft
+    { name: "Teams App Development", level: 88, category: "Microsoft" },
+    { name: "SPFx", level: 85, category: "Microsoft" },
+    
+    // Programming & Tools
     { name: "Python", level: 95, category: "Programming" },
+    { name: "Langchain JS", level: 87, category: "Programming" },
+    { name: "Figma", level: 85, category: "Design" },
+    
+    // Frameworks
     { name: "TensorFlow", level: 88, category: "Frameworks" },
     { name: "PyTorch", level: 85, category: "Frameworks" },
-    { name: "Data Science", level: 90, category: "Analytics" },
   ],
   selectedCategory = "All",
 }: SkillsSectionProps) => {
@@ -38,7 +68,7 @@ const SkillsSection = ({
       : skills.filter((skill) => skill.category === activeCategory);
 
   return (
-    <section className="w-full min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    <section className="w-full min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,11 +76,11 @@ const SkillsSection = ({
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Technical Skills
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Technical Expertise
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Specialized in AI and Machine Learning Technologies
+          <p className="text-lg text-gray-700">
+            Specialized in AI, Automation, and Modern Web Development
           </p>
         </motion.div>
 
@@ -75,16 +105,19 @@ const SkillsSection = ({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
-              <Card className="hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={skill.name}
+                className="bg-white/70 backdrop-blur-md border border-white/50 shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
                 <CardContent className="p-6">
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-gray-900">
                       {skill.name}
                     </h3>
                     <Badge variant="secondary">{skill.category}</Badge>
                   </div>
                   <div className="space-y-2">
-                    <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
+                    <div className="flex justify-between text-sm text-gray-700">
                       <span>Proficiency</span>
                       <span>{skill.level}%</span>
                     </div>

@@ -19,36 +19,69 @@ interface ProjectsGridProps {
 const defaultProjects: Project[] = [
   {
     id: "1",
-    title: "AI Task Automation",
+    title: "AI Document Processing System",
     description:
-      "Intelligent system for automating repetitive tasks using machine learning and NLP.",
+      "Built an intelligent document processing system that extracts, categorizes, and analyzes information from various document types using advanced NLP techniques.",
     imageUrl:
-      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/ai-task",
-    githubUrl: "https://github.com/example/ai-task",
-    tags: ["AI/ML", "Automation", "Python"],
+      "https://images.unsplash.com/photo-1568027762272-e4da8b8dde3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    demoUrl: "https://demo.example.com/ai-docs",
+    githubUrl: "https://github.com/example/ai-docs",
+    tags: ["AI", "NLP", "React"],
   },
   {
     id: "2",
-    title: "ML Pipeline Builder",
+    title: "Enterprise Automation Platform",
     description:
-      "Visual tool for building and deploying machine learning pipelines with ease.",
+      "Developed a comprehensive automation platform that integrates with Microsoft Teams, Power Automate, and Azure Functions to streamline business processes.",
     imageUrl:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/ml-pipeline",
-    githubUrl: "https://github.com/example/ml-pipeline",
-    tags: ["Machine Learning", "DevOps", "React"],
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    demoUrl: "https://demo.example.com/automation",
+    githubUrl: "https://github.com/example/automation",
+    tags: ["Automation", "Microsoft", "Azure"],
   },
   {
     id: "3",
-    title: "Smart Data Analytics",
+    title: "AI Voice Assistant",
     description:
-      "Real-time analytics platform powered by artificial intelligence.",
+      "Created an advanced voice assistant using AI speech-to-text and natural language understanding to perform complex tasks and integrate with various services.",
     imageUrl:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/analytics",
-    githubUrl: "https://github.com/example/analytics",
-    tags: ["Analytics", "AI", "TypeScript"],
+      "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    demoUrl: "https://demo.example.com/voice-assistant",
+    githubUrl: "https://github.com/example/voice-assistant",
+    tags: ["AI", "Voice", "TypeScript"],
+  },
+  {
+    id: "4",
+    title: "Next.js Web Application",
+    description:
+      "Built a modern, responsive web application using Next.js, TypeScript, and Supabase with real-time data synchronization and authentication.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    demoUrl: "https://demo.example.com/nextjs-app",
+    githubUrl: "https://github.com/example/nextjs-app",
+    tags: ["NextJS", "TypeScript", "Supabase"],
+  },
+  {
+    id: "5",
+    title: "AI Web Scraping Tool",
+    description:
+      "Developed an intelligent web scraping tool that uses AI to navigate websites, extract structured data, and adapt to changing page layouts.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    demoUrl: "https://demo.example.com/web-scraper",
+    githubUrl: "https://github.com/example/web-scraper",
+    tags: ["AI", "Web Scraping", "Python"],
+  },
+  {
+    id: "6",
+    title: "Teams App for Enterprise",
+    description:
+      "Created a custom Microsoft Teams application that enhances collaboration and integrates with enterprise systems using SPFx and Microsoft Graph API.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    demoUrl: "https://demo.example.com/teams-app",
+    githubUrl: "https://github.com/example/teams-app",
+    tags: ["Microsoft", "Teams", "SPFx"],
   },
 ];
 
@@ -79,14 +112,14 @@ const ProjectsGrid = ({ projects = defaultProjects }: ProjectsGridProps) => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-gray-50 dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="w-full min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured Projects
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Innovative Projects
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Explore my latest work in AI and automation
+          <p className="text-lg text-gray-700 mb-8">
+            Showcasing my expertise in AI, automation, and modern web development
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             <button
@@ -95,7 +128,7 @@ const ProjectsGrid = ({ projects = defaultProjects }: ProjectsGridProps) => {
                 ${
                   !selectedTag
                     ? "bg-primary text-white"
-                    : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                    : "bg-white/60 backdrop-blur-sm border border-white/50 text-gray-700 hover:bg-white/70"
                 }
               `}
             >
@@ -107,9 +140,9 @@ const ProjectsGrid = ({ projects = defaultProjects }: ProjectsGridProps) => {
                 onClick={() => setSelectedTag(tag)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
                   ${
-                    tag === selectedTag
+                    selectedTag === tag
                       ? "bg-primary text-white"
-                      : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                      : "bg-white/60 backdrop-blur-sm border border-white/50 text-gray-700 hover:bg-white/70"
                   }
                 `}
               >

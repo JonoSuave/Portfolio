@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection";
 import SkillsSection from "./SkillsSection";
 import ProjectsGrid from "./ProjectsGrid";
 import ContactSection from "./ContactSection";
+import BackgroundDesign from "./BackgroundDesign";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -37,57 +38,59 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen">
-      <SideNavigation
-        activeSection={activeSection}
-        onNavClick={(section) => {
-          document
-            .getElementById(section)
-            ?.scrollIntoView({ behavior: "smooth" });
-        }}
-      />
+    <BackgroundDesign>
+      <div className="min-h-screen">
+        <SideNavigation
+          activeSection={activeSection}
+          onNavClick={(section) => {
+            document
+              .getElementById(section)
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+        />
 
-      <main className="pl-20">
-        <motion.div
-          id="home"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <HeroSection />
-        </motion.div>
+        <main className="pl-20">
+          <motion.div
+            id="home"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <HeroSection />
+          </motion.div>
 
-        <motion.div
-          id="skills"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <SkillsSection />
-        </motion.div>
+          <motion.div
+            id="skills"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <SkillsSection />
+          </motion.div>
 
-        <motion.div
-          id="projects"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <ProjectsGrid />
-        </motion.div>
+          <motion.div
+            id="projects"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <ProjectsGrid />
+          </motion.div>
 
-        <motion.div
-          id="contact"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <ContactSection />
-        </motion.div>
-      </main>
-    </div>
+          <motion.div
+            id="contact"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <ContactSection />
+          </motion.div>
+        </main>
+      </div>
+    </BackgroundDesign>
   );
 };
 

@@ -32,9 +32,9 @@ const ProjectCard = ({
     <motion.div
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
-      className="w-full bg-white dark:bg-gray-800"
+      className="w-full"
     >
-      <Card className="h-full overflow-hidden border border-gray-200 dark:border-gray-700">
+      <Card className="h-full overflow-hidden bg-white/70 backdrop-blur-md border border-white/50 shadow-md">
         <CardHeader className="p-0">
           <div className="relative aspect-video overflow-hidden">
             <img

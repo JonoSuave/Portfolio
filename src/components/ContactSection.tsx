@@ -22,7 +22,7 @@ const ContactSection = ({
   description = "I'm always open to discussing new projects, opportunities in AI development, or just having a chat about technology.",
 }: ContactSectionProps) => {
   return (
-    <section className="w-full py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="w-full py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,10 +30,10 @@ const ContactSection = ({
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <Card className="max-w-3xl mx-auto">
+          <Card className="max-w-3xl mx-auto bg-white/70 backdrop-blur-md border border-white/50 shadow-md">
             <CardContent className="p-8">
               <h2 className="text-3xl font-bold text-center mb-4">{title}</h2>
-              <p className="text-gray-600 dark:text-gray-300 text-center mb-8">
+              <p className="text-gray-700 text-center mb-8">
                 {description}
               </p>
 
