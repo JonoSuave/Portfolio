@@ -33,6 +33,34 @@ const BackgroundDesign: React.FC<BackgroundDesignProps> = ({ children }) => {
         transition={{ duration: 1.5, delay: 0.3 }}
       />
       
+      {/* New prominent green blur between Hero and Technical Expertise sections */}
+      <motion.div
+        className="absolute top-[90vh] left-1/2 transform -translate-x-1/2 w-[900px] h-[300px] rounded-full"
+        style={{
+          backgroundColor: "#8AE9A1",
+          filter: "blur(100px)",
+          opacity: 0.5,
+          zIndex: 5,
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ duration: 1.5, delay: 0.4 }}
+      />
+      
+      {/* New blue blur between Technical Expertise and Innovative Projects sections */}
+      <motion.div
+        className="absolute top-[190vh] left-1/3 w-[800px] h-[350px] rounded-full"
+        style={{
+          backgroundColor: "#A7C7E7",
+          filter: "blur(110px)",
+          opacity: 0.55,
+          zIndex: 5,
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.55 }}
+        transition={{ duration: 1.8, delay: 0.5 }}
+      />
+      
       <motion.div
         className="absolute top-[40%] right-[10%] w-[600px] h-[600px] rounded-full"
         style={{

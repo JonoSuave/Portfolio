@@ -36,11 +36,11 @@ const HeroSection = ({
   name = "Jono Suave",
   title = "Software Developer",
   description = "I'm the most passionate Developer you will ever get to work with. If you have a great project that needs some amazing skills, I'm your guy.",
-  imageUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+  imageUrl = "/public/jono-green.jpg",
   socialLinks = {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    github: "https://github.com/JonoSuave",
+    linkedin: "https://www.linkedin.com/in/jono-duncan/",
+    twitter: "https://x.com/SuaveJono",
   },
 }: HeroSectionProps) => {
   return (

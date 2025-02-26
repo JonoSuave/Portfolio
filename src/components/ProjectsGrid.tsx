@@ -25,7 +25,7 @@ const defaultProjects: Project[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1568027762272-e4da8b8dde3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     demoUrl: "https://demo.example.com/ai-docs",
-    githubUrl: "https://github.com/example/ai-docs",
+    githubUrl: "https://github.com/JonoSuave/ai-docs",
     tags: ["AI", "NLP", "React"],
   },
   {
@@ -36,7 +36,7 @@ const defaultProjects: Project[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     demoUrl: "https://demo.example.com/automation",
-    githubUrl: "https://github.com/example/automation",
+    githubUrl: "https://github.com/JonoSuave/automation",
     tags: ["Automation", "Microsoft", "Azure"],
   },
   {
@@ -47,7 +47,7 @@ const defaultProjects: Project[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     demoUrl: "https://demo.example.com/voice-assistant",
-    githubUrl: "https://github.com/example/voice-assistant",
+    githubUrl: "https://github.com/JonoSuave/voice-assistant",
     tags: ["AI", "Voice", "TypeScript"],
   },
   {
@@ -58,7 +58,7 @@ const defaultProjects: Project[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     demoUrl: "https://demo.example.com/nextjs-app",
-    githubUrl: "https://github.com/example/nextjs-app",
+    githubUrl: "https://github.com/JonoSuave/nextjs-app",
     tags: ["NextJS", "TypeScript", "Supabase"],
   },
   {
@@ -69,7 +69,7 @@ const defaultProjects: Project[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     demoUrl: "https://demo.example.com/web-scraper",
-    githubUrl: "https://github.com/example/web-scraper",
+    githubUrl: "https://github.com/JonoSuave/web-scraper",
     tags: ["AI", "Web Scraping", "Python"],
   },
   {
@@ -80,7 +80,7 @@ const defaultProjects: Project[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     demoUrl: "https://demo.example.com/teams-app",
-    githubUrl: "https://github.com/example/teams-app",
+    githubUrl: "https://github.com/JonoSuave/teams-app",
     tags: ["Microsoft", "Teams", "SPFx"],
   },
 ];

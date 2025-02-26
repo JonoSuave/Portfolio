@@ -64,19 +64,19 @@ const SideNavigation = ({
     {
       icon: <Github size={20} />,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/JonoSuave",
       color: "hover:text-gray-900 dark:hover:text-white",
     },
     {
       icon: <Linkedin size={20} />,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/jono-duncan/",
       color: "hover:text-blue-600",
     },
     {
       icon: <XIcon />,
       label: "X",
-      href: "https://twitter.com",
+      href: "https://x.com/SuaveJono",
       color: "hover:text-black",
     },
   ];

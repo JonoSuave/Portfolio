@@ -21,17 +21,15 @@ const SkillsSection = ({
     { name: "React", level: 95, category: "Frontend" },
     { name: "TypeScript", level: 90, category: "Frontend" },
     { name: "NextJS", level: 88, category: "Frontend" },
+    { name: "Tailwind CSS", level: 92, category: "Frontend" },
     
     // Backend & Databases
     { name: "Supabase", level: 85, category: "Backend" },
     { name: "Convex", level: 82, category: "Backend" },
     { name: "Azure Functions", level: 80, category: "Backend" },
+    { name: "Clerk", level: 88, category: "Backend" },
     
     // AI & ML
-    { name: "Machine Learning", level: 90, category: "AI" },
-    { name: "Natural Language Processing", level: 85, category: "AI" },
-    { name: "Computer Vision", level: 80, category: "AI" },
-    { name: "Deep Learning", level: 85, category: "AI" },
     { name: "AI Document Processing", level: 88, category: "AI" },
     { name: "AI Speech to Text", level: 86, category: "AI" },
     { name: "MCP (Model Context Providers)", level: 84, category: "AI" },
@@ -51,10 +49,6 @@ const SkillsSection = ({
     { name: "Python", level: 95, category: "Programming" },
     { name: "Langchain JS", level: 87, category: "Programming" },
     { name: "Figma", level: 85, category: "Design" },
-    
-    // Frameworks
-    { name: "TensorFlow", level: 88, category: "Frameworks" },
-    { name: "PyTorch", level: 85, category: "Frameworks" },
   ],
   selectedCategory = "All",
 }: SkillsSectionProps) => {

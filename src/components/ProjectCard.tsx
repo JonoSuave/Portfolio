@@ -25,8 +25,8 @@ const ProjectCard = ({
   description = "An intelligent system that automates repetitive tasks using machine learning algorithms and natural language processing.",
   imageUrl = "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
   demoUrl = "https://demo.example.com",
-  githubUrl = "https://github.com/example/project",
-  tags = ["AI/ML", "Automation", "Python"],
+  githubUrl = "https://github.com/JonoSuave/project",
+  tags = [],
 }: ProjectCardProps) => {
   return (
     <motion.div

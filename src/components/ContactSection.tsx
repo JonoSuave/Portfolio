@@ -32,9 +32,9 @@ const XIcon = () => (
 
 const ContactSection = ({
   email = "jonosuave@gmail.com",
-  linkedinUrl = "https://linkedin.com/in/example",
-  twitterUrl = "https://twitter.com/example",
-  githubUrl = "https://github.com/example",
+  linkedinUrl = "https://www.linkedin.com/in/jono-duncan/",
+  twitterUrl = "https://x.com/SuaveJono",
+  githubUrl = "https://github.com/JonoSuave",
   title = "Let's Connect",
   description = "I'm always open to discussing new projects, opportunities in AI development, or just having a chat about technology.",
 }: ContactSectionProps) => {
