@@ -77,7 +77,21 @@ Netlify will automatically rebuild and redeploy your site whenever you push chan
 
 ## Troubleshooting
 
-If you encounter any issues during deployment:
+### Images Not Displaying
+
+If your images aren't displaying after deployment:
+
+1. **Check image paths**: For files in the `public` directory, reference them with paths that start at the site root:
+   - Correct: `/jono-green.jpg`
+   - Incorrect: `/public/jono-green.jpg`
+
+2. **Verify image existence**: Make sure the image files are actually in your `public` directory before building.
+
+3. **Check case sensitivity**: Netlify's servers are case-sensitive, so ensure the case of your file paths matches exactly.
+
+4. **Clear cache**: If you've fixed the paths but still don't see the images, try clearing your browser cache or viewing in an incognito window.
+
+If you encounter any other issues during deployment:
 
 1. Check the Netlify build logs for errors
 2. Ensure all environment variables are correctly set

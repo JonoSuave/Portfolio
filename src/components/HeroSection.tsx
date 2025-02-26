@@ -36,7 +36,7 @@ const HeroSection = ({
   name = "Jono Suave",
   title = "Software Developer",
   description = "I'm the most passionate Developer you will ever get to work with. If you have a great project that needs some amazing skills, I'm your guy.",
-  imageUrl = "/public/jono-green.jpg",
+  imageUrl = "/jono-green.jpg",
   socialLinks = {
     github: "https://github.com/JonoSuave",
     linkedin: "https://www.linkedin.com/in/jono-duncan/",
