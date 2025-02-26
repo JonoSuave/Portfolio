@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ContactSectionProps {
@@ -13,8 +13,25 @@ interface ContactSectionProps {
   description?: string;
 }
 
+// Custom X (formerly Twitter) icon component
+const XIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-5 h-5"
+  >
+    <path
+      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 const ContactSection = ({
-  email = "hello@example.com",
+  email = "jonosuave@gmail.com",
   linkedinUrl = "https://linkedin.com/in/example",
   twitterUrl = "https://twitter.com/example",
   githubUrl = "https://github.com/example",
@@ -61,8 +78,8 @@ const ContactSection = ({
                   className="flex items-center justify-center gap-2 h-12"
                   onClick={() => window.open(twitterUrl, "_blank")}
                 >
-                  <Twitter className="w-5 h-5 text-[#1DA1F2]" />
-                  Twitter
+                  <XIcon />
+                  X
                 </Button>
 
                 <Button
