@@ -33,7 +33,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({
-  name = "Jono Suave",
+  name = "Jono Duncan",
   title = "Software Developer",
   description = "As a dedicated AI developer, I am committed to leveraging cutting-edge technologies to drive innovation and deliver impactful solutions.",
   imageUrl = "/jono-green.jpg",
@@ -113,9 +113,7 @@ const HeroSection = ({
           transition={{ duration: 0.5 }}
           className="space-y-6"
         >
-          <p className="text-lg text-gray-800 max-w-xl">
-            {description}
-          </p>
+          <p className="text-lg text-gray-800 max-w-xl">{description}</p>
           <Button
             size="lg"
             className="group bg-indigo-700 hover:bg-indigo-800 text-white"
