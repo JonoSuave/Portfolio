@@ -35,7 +35,7 @@ interface HeroSectionProps {
 const HeroSection = ({
   name = "Jono Suave",
   title = "Software Developer",
-  description = "I'm the most passionate Developer you will ever get to work with. If you have a great project that needs some amazing skills, I'm your guy.",
+  description = "As a dedicated AI developer, I am committed to leveraging cutting-edge technologies to drive innovation and deliver impactful solutions.",
   imageUrl = "/jono-green.jpg",
   socialLinks = {
     github: "https://github.com/JonoSuave",

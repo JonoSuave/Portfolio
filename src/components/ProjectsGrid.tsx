@@ -19,77 +19,77 @@ interface ProjectsGridProps {
 const defaultProjects: Project[] = [
   {
     id: "1",
-    title: "AI Document Processing System",
+    title: "AI Chat with PDF",
     description:
       "Built an intelligent document processing system that extracts, categorizes, and analyzes information from various document types using advanced NLP techniques.",
     imageUrl:
-      "https://images.unsplash.com/photo-1568027762272-e4da8b8dde3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/ai-docs",
-    githubUrl: "https://github.com/JonoSuave/ai-docs",
-    tags: ["AI", "NLP", "React"],
-  },
-  {
-    id: "2",
-    title: "Enterprise Automation Platform",
-    description:
-      "Developed a comprehensive automation platform that integrates with Microsoft Teams, Power Automate, and Azure Functions to streamline business processes.",
-    imageUrl:
       "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/automation",
-    githubUrl: "https://github.com/JonoSuave/automation",
-    tags: ["Automation", "Microsoft", "Azure"],
+    demoUrl: "https://chat-with-pdf-challenge-three.vercel.app/",
+    githubUrl: "https://github.com/JonoSuave/chat-with-pdf",
+    tags: ["AI", "NLP", "React", "TypeScript", "NextJS", "TailwindCSS"],
   },
-  {
-    id: "3",
-    title: "AI Voice Assistant",
-    description:
-      "Created an advanced voice assistant using AI speech-to-text and natural language understanding to perform complex tasks and integrate with various services.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/voice-assistant",
-    githubUrl: "https://github.com/JonoSuave/voice-assistant",
-    tags: ["AI", "Voice", "TypeScript"],
-  },
-  {
-    id: "4",
-    title: "Next.js Web Application",
-    description:
-      "Built a modern, responsive web application using Next.js, TypeScript, and Supabase with real-time data synchronization and authentication.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/nextjs-app",
-    githubUrl: "https://github.com/JonoSuave/nextjs-app",
-    tags: ["NextJS", "TypeScript", "Supabase"],
-  },
-  {
-    id: "5",
-    title: "AI Web Scraping Tool",
-    description:
-      "Developed an intelligent web scraping tool that uses AI to navigate websites, extract structured data, and adapt to changing page layouts.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/web-scraper",
-    githubUrl: "https://github.com/JonoSuave/web-scraper",
-    tags: ["AI", "Web Scraping", "Python"],
-  },
-  {
-    id: "6",
-    title: "Teams App for Enterprise",
-    description:
-      "Created a custom Microsoft Teams application that enhances collaboration and integrates with enterprise systems using SPFx and Microsoft Graph API.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    demoUrl: "https://demo.example.com/teams-app",
-    githubUrl: "https://github.com/JonoSuave/teams-app",
-    tags: ["Microsoft", "Teams", "SPFx"],
-  },
+  // {
+  //   id: "2",
+  //   title: "Enterprise Automation Platform",
+  //   description:
+  //     "Developed a comprehensive automation platform that integrates with Microsoft Teams, Power Automate, and Azure Functions to streamline business processes.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  //   demoUrl: "https://demo.example.com/automation",
+  //   githubUrl: "https://github.com/JonoSuave/automation",
+  //   tags: ["Automation", "Microsoft", "Azure"],
+  // },
+  // {
+  //   id: "3",
+  //   title: "AI Voice Assistant",
+  //   description:
+  //     "Created an advanced voice assistant using AI speech-to-text and natural language understanding to perform complex tasks and integrate with various services.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  //   demoUrl: "https://demo.example.com/voice-assistant",
+  //   githubUrl: "https://github.com/JonoSuave/voice-assistant",
+  //   tags: ["AI", "Voice", "TypeScript"],
+  // },
+  // {
+  //   id: "4",
+  //   title: "Next.js Web Application",
+  //   description:
+  //     "Built a modern, responsive web application using Next.js, TypeScript, and Supabase with real-time data synchronization and authentication.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  //   demoUrl: "https://demo.example.com/nextjs-app",
+  //   githubUrl: "https://github.com/JonoSuave/nextjs-app",
+  //   tags: ["NextJS", "TypeScript", "Supabase"],
+  // },
+  // {
+  //   id: "5",
+  //   title: "AI Web Scraping Tool",
+  //   description:
+  //     "Developed an intelligent web scraping tool that uses AI to navigate websites, extract structured data, and adapt to changing page layouts.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  //   demoUrl: "https://demo.example.com/web-scraper",
+  //   githubUrl: "https://github.com/JonoSuave/web-scraper",
+  //   tags: ["AI", "Web Scraping", "Python"],
+  // },
+  // {
+  //   id: "6",
+  //   title: "Teams App for Enterprise",
+  //   description:
+  //     "Created a custom Microsoft Teams application that enhances collaboration and integrates with enterprise systems using SPFx and Microsoft Graph API.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  //   demoUrl: "https://demo.example.com/teams-app",
+  //   githubUrl: "https://github.com/JonoSuave/teams-app",
+  //   tags: ["Microsoft", "Teams", "SPFx"],
+  // },
 ];
 
 const ProjectsGrid = ({ projects = defaultProjects }: ProjectsGridProps) => {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   const allTags = Array.from(
-    new Set(projects.flatMap((project) => project.tags)),
+    new Set(projects.flatMap((project) => project.tags))
   );
 
   const filteredProjects = selectedTag
@@ -119,7 +119,8 @@ const ProjectsGrid = ({ projects = defaultProjects }: ProjectsGridProps) => {
             Innovative Projects
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Showcasing my expertise in AI, automation, and modern web development
+            Showcasing my expertise in AI, automation, and modern web
+            development
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             <button
