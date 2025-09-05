@@ -31,7 +31,7 @@ const XIcon = () => (
 );
 
 const ContactSection = ({
-  email = "jonosuave@gmail.com",
+  email = "info@aiautomagix.com",
   linkedinUrl = "https://www.linkedin.com/in/jono-duncan/",
   twitterUrl = "https://x.com/SuaveJono",
   githubUrl = "https://github.com/JonoSuave",
@@ -50,9 +50,7 @@ const ContactSection = ({
           <Card className="max-w-3xl mx-auto bg-white/70 backdrop-blur-md border border-white/50 shadow-md">
             <CardContent className="p-8">
               <h2 className="text-3xl font-bold text-center mb-4">{title}</h2>
-              <p className="text-gray-700 text-center mb-8">
-                {description}
-              </p>
+              <p className="text-gray-700 text-center mb-8">{description}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Button
@@ -78,8 +76,7 @@ const ContactSection = ({
                   className="flex items-center justify-center gap-2 h-12"
                   onClick={() => window.open(twitterUrl, "_blank")}
                 >
-                  <XIcon />
-                  X
+                  <XIcon />X
                 </Button>
 
                 <Button
