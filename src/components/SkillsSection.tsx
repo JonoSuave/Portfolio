@@ -31,14 +31,15 @@ const SkillsSection = ({
     
     // AI & ML
     { name: "AI Document Processing", level: 88, category: "AI" },
-    { name: "AI Speech to Text", level: 86, category: "AI" },
     { name: "MCP (Model Context Providers)", level: 84, category: "AI" },
+    { name: "Vercel AI SDK Agents", level: 85, category: "AI" },
+    { name: "Vapi Voice Agents", level: 87, category: "AI" },
     
     // Automation
     { name: "AI Webscraping & Crawling", level: 92, category: "Automation" },
     { name: "AI Voice Automation", level: 88, category: "Automation" },
+    { name: "Firecrawl", level: 90, category: "Automation" },
     { name: "Power Automate", level: 90, category: "Automation" },
-    { name: "Make.com", level: 85, category: "Automation" },
     { name: "n8n", level: 82, category: "Automation" },
     
     // Microsoft
@@ -46,7 +47,7 @@ const SkillsSection = ({
     { name: "SPFx", level: 85, category: "Microsoft" },
     
     // Programming & Tools
-    { name: "Python", level: 95, category: "Programming" },
+    { name: "Python", level: 60, category: "Programming" },
     { name: "Langchain JS", level: 87, category: "Programming" },
     { name: "Figma", level: 85, category: "Design" },
   ],

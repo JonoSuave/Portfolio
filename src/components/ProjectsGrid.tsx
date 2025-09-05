@@ -26,7 +26,29 @@ const defaultProjects: Project[] = [
       "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     demoUrl: "https://chat-with-pdf-challenge-three.vercel.app/",
     githubUrl: "https://github.com/JonoSuave/chat-with-pdf",
-    tags: ["AI", "NLP", "React", "TypeScript", "NextJS", "TailwindCSS"],
+    tags: ["AI", "NLP", "React", "TypeScript", "Next.js", "TailwindCSS"],
+  },
+  {
+    id: "2",
+    title: "Firesearch - AI Research Assistant",
+    description:
+      "AI-powered deep research tool that breaks down complex queries, validates answers, and synthesizes findings from multiple web sources using Firecrawl API and GPT-4o.",
+    imageUrl:
+      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F2YWo4amdieGVnOXR3aGM5ZnBlcDZvbnRjNW1vNmtpeWNhc3VtbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jw7Q08ll8Vh0BoApI8/giphy.gif",
+    demoUrl: "https://firesearch-ochre.vercel.app/",
+    githubUrl: "https://github.com/JonoSuave/firesearch",
+    tags: ["AI", "OpenAI", "Next.js", "TypeScript", "LangGraph", "Firecrawl"],
+  },
+  {
+    id: "3",
+    title: "South American Journeys",
+    description:
+      "Travel website showcasing transformative South American adventures with sustainable tourism focus, featuring dynamic galleries and seamless booking integration.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1526392060635-9d6019884377",
+    demoUrl: "https://southamericanjourneys.com/",
+    githubUrl: "https://github.com/JonoSuave",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
   },
   // {
   //   id: "2",
