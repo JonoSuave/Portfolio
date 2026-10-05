@@ -7,6 +7,7 @@ const filters = [
   { id: "all", label: "All" },
   { id: "responsive", label: "Desktop + Mobile" },
   { id: "desktop", label: "Desktop" },
+  { id: "social", label: "Social ads" },
 ] as const;
 
 type FilterId = (typeof filters)[number]["id"];
@@ -16,8 +17,10 @@ const DesignsGallery = () => {
 
   const visible = publishedDesigns.filter((d) => {
     const hasMobile = shotsFor(d, "mobile").length > 0;
-    if (filter === "responsive") return hasMobile;
-    if (filter === "desktop") return !hasMobile;
+    const hasDesktop = shotsFor(d, "desktop").length > 0;
+    if (filter === "responsive") return hasDesktop && hasMobile;
+    if (filter === "desktop") return hasDesktop && !hasMobile;
+    if (filter === "social") return d.category === "social";
     return true;
   });
 

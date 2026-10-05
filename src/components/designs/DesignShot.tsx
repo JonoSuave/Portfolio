@@ -22,6 +22,9 @@ const DesignShot = () => {
   const heroMobile = mobile.find((s) => !s.tall);
   // The hero already shows the lead desktop shot; don't repeat it below.
   const desktopList = desktop.filter((s) => s !== heroDesktop);
+  // Phone-only designs (e.g. social ads) show every phone side by side in the hero.
+  const heroPhones = heroDesktop ? [] : mobile.filter((s) => !s.tall);
+  const phoneOnly = heroPhones.length >= 2;
   const open = (shot: Shot) => setLightbox(design.shots.indexOf(shot));
   const more = publishedDesigns.filter((d) => d.slug !== design.slug);
 
@@ -65,7 +68,7 @@ const DesignShot = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative mt-8 overflow-hidden rounded-3xl px-[6%] pb-0 pt-[6%]"
+          className={`relative mt-8 overflow-hidden rounded-3xl px-[6%] pt-[6%] ${phoneOnly ? "pb-[5%]" : "pb-0"}`}
           style={{ backgroundColor: design.accent }}
         >
           {heroDesktop ? (
@@ -79,16 +82,36 @@ const DesignShot = () => {
               {heroMobile && (
                 <PhoneFrame
                   src={heroMobile.src}
+                  poster={heroMobile.poster}
                   alt={heroMobile.alt}
                   onClick={() => open(heroMobile)}
                   className="absolute -bottom-[1px] right-[-3%] hidden w-[22%] translate-y-[8%] sm:block"
                 />
               )}
             </div>
+          ) : phoneOnly ? (
+            <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-4">
+              {heroPhones.map((shot) => (
+                <figure key={shot.src}>
+                  <PhoneFrame
+                    src={shot.src}
+                    poster={shot.poster}
+                    alt={shot.alt}
+                    onClick={() => open(shot)}
+                  />
+                  {shot.caption && (
+                    <figcaption className="mt-3 text-center text-sm font-medium text-gray-800">
+                      {shot.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
           ) : (
             heroMobile && (
               <PhoneFrame
                 src={heroMobile.src}
+                poster={heroMobile.poster}
                 alt={heroMobile.alt}
                 onClick={() => open(heroMobile)}
                 className="mx-auto mb-[6%] w-[60%] max-w-xs"
@@ -145,7 +168,7 @@ const DesignShot = () => {
         )}
 
         {/* Mobile shots */}
-        {mobile.length > 0 && (
+        {mobile.length > 0 && !phoneOnly && (
           <section className="mt-20">
             <h2 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
               <Smartphone className="h-4 w-4" /> Mobile
@@ -158,6 +181,7 @@ const DesignShot = () => {
                 <figure key={shot.src} className="w-[calc(50%-0.625rem)] sm:w-[calc(33.333%-0.875rem)] sm:max-w-[260px]">
                   <PhoneFrame
                     src={shot.src}
+                    poster={shot.poster}
                     alt={shot.alt}
                     tall={shot.tall}
                     onClick={shot.tall ? undefined : () => open(shot)}

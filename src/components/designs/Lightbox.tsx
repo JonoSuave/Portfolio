@@ -65,20 +65,37 @@ const Lightbox = ({ shots, index, onChange }: LightboxProps) => {
           </div>
 
           <div className="relative flex-1 overflow-y-auto px-4 pb-10 sm:px-16">
-            <motion.img
-              key={shot.src}
-              src={shot.src}
-              alt={shot.alt}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.2 }}
-              onClick={(e) => e.stopPropagation()}
-              className={
-                shot.device === "desktop"
-                  ? "mx-auto w-full max-w-6xl rounded-lg"
-                  : "mx-auto w-full max-w-[420px] rounded-2xl"
-              }
-            />
+            {shot.src.endsWith(".mp4") ? (
+              <motion.video
+                key={shot.src}
+                src={shot.src}
+                poster={shot.poster}
+                aria-label={shot.alt}
+                controls
+                autoPlay
+                playsInline
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.2 }}
+                onClick={(e) => e.stopPropagation()}
+                className="mx-auto max-h-[85vh] rounded-2xl"
+              />
+            ) : (
+              <motion.img
+                key={shot.src}
+                src={shot.src}
+                alt={shot.alt}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.2 }}
+                onClick={(e) => e.stopPropagation()}
+                className={
+                  shot.device === "desktop"
+                    ? "mx-auto w-full max-w-6xl rounded-lg"
+                    : "mx-auto w-full max-w-[420px] rounded-2xl"
+                }
+              />
+            )}
           </div>
 
           {shots.length > 1 && (

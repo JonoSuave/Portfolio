@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import AutoVideo from "./AutoVideo";
 
 interface FrameProps {
   src: string;
@@ -9,6 +10,8 @@ interface FrameProps {
   className?: string;
   /** Use on thumbnails so the image fills a fixed-ratio frame. */
   cover?: boolean;
+  /** Poster frame when src is a video. */
+  poster?: string;
 }
 
 export const BrowserFrame = ({ src, alt, tall, onClick, className, cover }: FrameProps) => (
@@ -45,7 +48,9 @@ export const BrowserFrame = ({ src, alt, tall, onClick, className, cover }: Fram
   </div>
 );
 
-export const PhoneFrame = ({ src, alt, tall, onClick, className }: FrameProps) => (
+export const PhoneFrame = ({ src, alt, tall, onClick, className, poster }: FrameProps) => {
+  const video = src.endsWith(".mp4");
+  return (
   <div
     className={cn(
       "relative rounded-[2.4rem] bg-gray-950 p-[0.55rem] shadow-[0_24px_50px_-18px_rgba(15,23,42,0.55)]",
@@ -59,17 +64,23 @@ export const PhoneFrame = ({ src, alt, tall, onClick, className }: FrameProps) =
       disabled={!onClick}
       aria-label={onClick ? `Enlarge: ${alt}` : undefined}
       className={cn(
-        "block aspect-[390/844] w-full overflow-hidden rounded-[1.9rem] bg-white text-left",
+        "block w-full overflow-hidden rounded-[1.9rem] bg-white text-left",
+        video ? "aspect-[9/16] bg-gray-950" : "aspect-[390/844]",
         onClick && "cursor-zoom-in",
         tall && "overflow-y-auto overscroll-contain",
       )}
     >
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        className={cn("block w-full", !tall && "h-full object-cover object-top")}
-      />
+      {video ? (
+        <AutoVideo src={src} poster={poster} label={alt} />
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className={cn("block w-full", !tall && "h-full object-cover object-top")}
+        />
+      )}
     </button>
   </div>
-);
+  );
+};

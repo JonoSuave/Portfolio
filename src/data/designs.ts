@@ -8,6 +8,8 @@ export interface Shot {
   caption?: string;
   /** Full-page capture; rendered inside a scrollable frame instead of cropped. */
   tall?: boolean;
+  /** Still frame for video shots (.mp4), used before playback and on cards. */
+  poster?: string;
 }
 
 export interface Design {
@@ -22,12 +24,15 @@ export interface Design {
   /** Background colour of the hero stage and mobile panel. */
   accent: string;
   liveUrl?: string;
+  /** "social" designs are vertical video ads rather than product UI. */
+  category?: "social";
   shots: Shot[];
 }
 
 const saj = "/designs/south-american-journeys";
 const tga = "/designs/tiny-grand-adventures";
 const rm = "/designs/resource-manager";
+const ads = "/designs/tga-social-ads";
 
 export const designs: Design[] = [
   {
@@ -91,6 +96,28 @@ export const designs: Design[] = [
     ],
   },
   {
+    slug: "tga-social-ads",
+    title: "Tiny Grand Adventures: Social Ads",
+    client: "Tiny Grand Adventures",
+    year: "2026",
+    summary:
+      "Short vertical video ads for Zen Haus, each built around one reason to book: the reviews, the feeling, the shortcut, the memories.",
+    description: [
+      "Paid social for a single tiny house has to stop the scroll in a second and make one point clearly. Each of these ads takes one angle and commits to it.",
+      "Five Stars sets real guest reviews against the night sky the house is known for. You + Me is a claymation love note about the trip you take together. East Gate Entrance uses an illustrated map to show how staying on the quiet east side skips the South Entrance line. Keepsake is a photo-card montage of the small moments guests take home.",
+    ],
+    role: ["Creative direction", "Scriptwriting", "Motion design", "AI video production"],
+    tags: ["HyperFrames", "Higgsfield", "Seedance", "Suno", "FFmpeg"],
+    accent: "#E8DCCB",
+    category: "social",
+    shots: [
+      { src: `${ads}/five-stars.mp4`, poster: `${ads}/five-stars-poster.webp`, alt: "Five Stars ad: guest reviews over a starry night sky", device: "mobile", caption: "Five Stars" },
+      { src: `${ads}/you-plus-me.mp4`, poster: `${ads}/you-plus-me-poster.webp`, alt: "You + Me claymation ad", device: "mobile", caption: "You + Me" },
+      { src: `${ads}/east-gate.mp4`, poster: `${ads}/east-gate-poster.webp`, alt: "East Gate Entrance ad: illustrated map of skipping the South Entrance line", device: "mobile", caption: "East Gate Entrance" },
+      { src: `${ads}/keepsake.mp4`, poster: `${ads}/keepsake-poster.webp`, alt: "Keepsake ad: photo-card montage of guest moments", device: "mobile", caption: "Keepsake" },
+    ],
+  },
+  {
     slug: "resource-manager",
     title: "Resource Manager: Unit Entries",
     client: "Environmental engineering firm",
@@ -136,6 +163,11 @@ export const publishedDesigns = designs.filter((d) => d.shots.length > 0);
 
 export const getDesign = (slug: string) =>
   publishedDesigns.find((d) => d.slug === slug);
+
+export const isVideo = (shot: Shot) => shot.src.endsWith(".mp4");
+
+/** Image to show where a still is needed (cards, thumbnails). */
+export const stillFor = (shot: Shot) => (isVideo(shot) ? shot.poster ?? "" : shot.src);
 
 export const shotsFor = (design: Design, device: Device) =>
   design.shots.filter((s) => s.device === device);

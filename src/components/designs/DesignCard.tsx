@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Monitor, Smartphone } from "lucide-react";
-import { type Design, shotsFor } from "@/data/designs";
+import { type Design, shotsFor, stillFor } from "@/data/designs";
 
 const DesignCard = ({ design }: { design: Design }) => {
   const desktop = shotsFor(design, "desktop")[0];
-  const mobile = shotsFor(design, "mobile").find((s) => !s.tall);
+  const phones = shotsFor(design, "mobile").filter((s) => !s.tall);
+  const mobile = phones[0];
   const cover = desktop ?? mobile;
 
   return (
@@ -28,10 +29,24 @@ const DesignCard = ({ design }: { design: Design }) => {
               loading="lazy"
               className="absolute left-[7%] top-[9%] w-[86%] rounded-lg shadow-xl transition-transform duration-500 group-hover:-translate-y-1"
             />
+          ) : phones.length >= 3 ? (
+            <div className="absolute inset-x-[8%] top-[9%] flex justify-center gap-[4%]">
+              {phones.slice(0, 3).map((shot, i) => (
+                <img
+                  key={shot.src}
+                  src={stillFor(shot)}
+                  alt={i === 0 ? shot.alt : ""}
+                  loading="lazy"
+                  className={`w-[30%] rounded-xl border-[3px] border-gray-950 shadow-xl transition-transform duration-500 ${
+                    i === 1 ? "translate-y-[8%] group-hover:translate-y-[4%]" : "group-hover:-translate-y-1"
+                  }`}
+                />
+              ))}
+            </div>
           ) : (
             cover && (
               <img
-                src={cover.src}
+                src={stillFor(cover)}
                 alt={cover.alt}
                 loading="lazy"
                 className="mx-auto mt-[8%] w-[38%] rounded-2xl shadow-xl"
@@ -40,7 +55,7 @@ const DesignCard = ({ design }: { design: Design }) => {
           )}
           {desktop && mobile && (
             <img
-              src={mobile.src}
+              src={stillFor(mobile)}
               alt=""
               loading="lazy"
               className="absolute bottom-[-12%] right-[6%] w-[22%] rounded-xl border-[3px] border-gray-950 shadow-2xl transition-transform duration-500 group-hover:-translate-y-2"
