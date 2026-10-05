@@ -33,6 +33,7 @@ const saj = "/designs/south-american-journeys";
 const tga = "/designs/tiny-grand-adventures";
 const rm = "/designs/resource-manager";
 const ads = "/designs/tga-social-ads";
+const audit = "/designs/file-folder-audit";
 
 export const designs: Design[] = [
   {
@@ -139,21 +140,22 @@ export const designs: Design[] = [
     ],
   },
   {
-    slug: "project-audits",
-    title: "Project Quality Audits",
+    slug: "file-folder-audit",
+    title: "File & Folder Audit",
     client: "Environmental engineering firm",
     year: "2026",
     summary:
-      "Quarterly quality audits of project folders and deliverables, from audit form to remediation tracking.",
+      "Quarterly quality audits of project folders and deliverables, from claiming a project to remediation tracking.",
     description: [
-      "An engineering firm audits a sample of projects every quarter against its quality standards. The Audit App replaces a manual spreadsheet process: projects are pulled from the ERP each quarter, auditors work through a short yes/no form, and non-compliant projects flow to their project manager for remediation.",
-      "The interface is built for auditors who review many projects in a sitting: a filterable audits dashboard, a focused audit form with comments on each question, and clear status states from Not Started through Awaiting Remediation to Complete. Sibling apps for specialised report types share the same design system.",
+      "An engineering firm audits a sample of projects every quarter against its quality standards. This app replaces a manual spreadsheet process: projects are pulled from the ERP each quarter, auditors claim the ones they will review, work through a short yes/no form, and non-compliant projects flow to their project manager for remediation.",
+      "The interface is built for auditors who review many projects in a sitting: one table with clear status badges from Available through Assigned and Awaiting Remediation to Compliant, a row menu that changes with the project's state, comments on any question, and a prompt that offers to save a draft before an auditor closes a half-finished form.",
     ],
     role: ["UI/UX design", "Full-stack build"],
     tags: ["Next.js", "TypeScript", "shadcn/ui", "Azure"],
     accent: "#DCE8E4",
     shots: [
-      // Desktop only. Screens must be anonymised (no client branding, people or projects).
+      { src: `${audit}/audits-dashboard-desktop.webp`, alt: "Audits table with status badges for each project", device: "desktop", caption: "Audits dashboard" },
+      { src: `${audit}/audit-walkthrough.gif`, alt: "Animated walkthrough: claiming a project, answering audit questions with a comment, and the leave-without-saving prompt", device: "desktop", caption: "Claim a project, audit it, and never lose answers by accident" },
     ],
   },
 ];
