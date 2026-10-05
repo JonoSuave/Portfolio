@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Home,
   Code2,
   Briefcase,
   Mail,
+  Palette,
   Github,
   Linkedin,
 } from "lucide-react";
@@ -35,6 +37,8 @@ interface NavItem {
   icon: React.ReactNode;
   label: string;
   href: string;
+  /** Client-side route instead of an in-page section. */
+  route?: boolean;
 }
 
 interface SocialLink {
@@ -53,10 +57,12 @@ const SideNavigation = ({
   activeSection = "home",
   onNavClick = () => {},
 }: SideNavigationProps) => {
+  const navigate = useNavigate();
   const navItems: NavItem[] = [
     { icon: <Home size={24} />, label: "Home", href: "#home" },
     { icon: <Code2 size={24} />, label: "Skills", href: "#skills" },
     { icon: <Briefcase size={24} />, label: "Projects", href: "#projects" },
+    { icon: <Palette size={24} />, label: "Designs", href: "/designs", route: true },
     { icon: <Mail size={24} />, label: "Contact", href: "#contact" },
   ];
 
@@ -95,7 +101,14 @@ const SideNavigation = ({
               <TooltipTrigger asChild>
                 <motion.a
                   href={item.href}
-                  onClick={() => onNavClick(item.label.toLowerCase())}
+                  onClick={(e) => {
+                    if (item.route) {
+                      e.preventDefault();
+                      navigate(item.href);
+                    } else {
+                      onNavClick(item.label.toLowerCase());
+                    }
+                  }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className={`p-3 rounded-lg transition-colors ${

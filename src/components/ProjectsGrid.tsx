@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 interface Project {
   id: string;
@@ -194,6 +196,16 @@ const ProjectsGrid = ({ projects = defaultProjects }: ProjectsGridProps) => {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/designs"
+            className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-700"
+          >
+            View UI/UX design gallery
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
