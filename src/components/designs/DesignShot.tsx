@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ExternalLink, Monitor, Smartphone } from "lucide-react";
+import { ExternalLink, Monitor, PanelRight, Smartphone } from "lucide-react";
 import { getDesign, publishedDesigns, shotsFor, type Shot } from "@/data/designs";
 import DesignsLayout from "./DesignsLayout";
 import DesignCard from "./DesignCard";
@@ -17,6 +17,7 @@ const DesignShot = () => {
 
   const desktop = shotsFor(design, "desktop");
   const mobile = shotsFor(design, "mobile");
+  const details = shotsFor(design, "detail");
   const heroDesktop = desktop.find((s) => !s.tall);
   const heroMobile = mobile.find((s) => !s.tall);
   // The hero already shows the lead desktop shot; don't repeat it below.
@@ -161,6 +162,37 @@ const DesignShot = () => {
                     tall={shot.tall}
                     onClick={shot.tall ? undefined : () => open(shot)}
                   />
+                  {shot.caption && (
+                    <figcaption className="mt-3 text-center text-sm font-medium text-gray-800">
+                      {shot.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Detail shots: UI fragments shown without a device frame */}
+        {details.length > 0 && (
+          <section className="mt-20">
+            <h2 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-500">
+              <PanelRight className="h-4 w-4" /> Details
+            </h2>
+            <div
+              className="mt-6 flex flex-wrap items-start justify-center gap-10 rounded-3xl p-6 sm:p-10"
+              style={{ backgroundColor: design.accent }}
+            >
+              {details.map((shot) => (
+                <figure key={shot.src} className="w-full max-w-[420px]">
+                  <button
+                    type="button"
+                    onClick={() => open(shot)}
+                    aria-label={`Enlarge: ${shot.alt}`}
+                    className="block w-full cursor-zoom-in overflow-hidden rounded-2xl shadow-[0_24px_50px_-18px_rgba(15,23,42,0.45)] ring-1 ring-black/5"
+                  >
+                    <img src={shot.src} alt={shot.alt} loading="lazy" className="block w-full" />
+                  </button>
                   {shot.caption && (
                     <figcaption className="mt-3 text-center text-sm font-medium text-gray-800">
                       {shot.caption}

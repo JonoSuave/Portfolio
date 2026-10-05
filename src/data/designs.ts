@@ -1,4 +1,5 @@
-export type Device = "desktop" | "mobile";
+/** "detail" is a UI fragment (panel, popover) shown without a device frame. */
+export type Device = "desktop" | "mobile" | "detail";
 
 export interface Shot {
   src: string;
@@ -107,6 +108,7 @@ export const designs: Design[] = [
     shots: [
       { src: `${rm}/unit-entries-desktop.webp`, alt: "Unit Entries desktop grid with frozen project columns and day grid", device: "desktop", caption: "Unit Entries: frozen project columns, scrolling day grid" },
       { src: `${rm}/reservations-desktop.webp`, alt: "Grouped reservations table with dates, counts and status", device: "desktop", caption: "Grouped reservations across projects" },
+      { src: `${rm}/whats-new-panel.webp`, alt: "In-app What's New panel listing release notes", device: "detail", caption: "In-app What's New panel: release notes written for field staff, not developers" },
       { src: `${rm}/unit-entries-mobile.webp`, alt: "Unit Entries mobile view with submission banners and week tabs", device: "mobile", caption: "Unit Entries on mobile" },
     ],
   },

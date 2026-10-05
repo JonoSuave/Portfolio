@@ -74,9 +74,9 @@ const Lightbox = ({ shots, index, onChange }: LightboxProps) => {
               transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
               className={
-                shot.device === "mobile"
-                  ? "mx-auto w-full max-w-[420px] rounded-2xl"
-                  : "mx-auto w-full max-w-6xl rounded-lg"
+                shot.device === "desktop"
+                  ? "mx-auto w-full max-w-6xl rounded-lg"
+                  : "mx-auto w-full max-w-[420px] rounded-2xl"
               }
             />
           </div>
