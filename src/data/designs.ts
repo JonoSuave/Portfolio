@@ -106,8 +106,8 @@ export const designs: Design[] = [
       "Paid social for a single tiny house has to stop the scroll in a second and make one point clearly. Each of these ads takes one angle and commits to it.",
       "Five Stars sets real guest reviews against the night sky the house is known for. You + Me is a claymation love note about the trip you take together. East Gate Entrance uses an illustrated map to show how staying on the quiet east side skips the South Entrance line. Keepsake is a photo-card montage of the small moments guests take home.",
     ],
-    role: ["Creative direction", "Scriptwriting", "Motion design", "AI video production"],
-    tags: ["HyperFrames", "Higgsfield", "Seedance", "Suno", "FFmpeg"],
+    role: [],
+    tags: [],
     accent: "#E8DCCB",
     category: "social",
     shots: [

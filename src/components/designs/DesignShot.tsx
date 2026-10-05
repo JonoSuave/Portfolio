@@ -128,16 +128,18 @@ const DesignShot = () => {
               {p}
             </p>
           ))}
-          <dl className="mt-8 grid grid-cols-1 gap-6 border-t border-gray-200 pt-6 text-sm sm:grid-cols-2">
-            <div>
-              <dt className="font-semibold text-gray-900">Role</dt>
-              <dd className="mt-1 text-gray-600">{design.role.join(" · ")}</dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-gray-900">Built with</dt>
-              <dd className="mt-1 text-gray-600">{design.tags.join(" · ")}</dd>
-            </div>
-          </dl>
+          {(design.role.length > 0 || design.tags.length > 0) && (
+            <dl className="mt-8 grid grid-cols-1 gap-6 border-t border-gray-200 pt-6 text-sm sm:grid-cols-2">
+              <div>
+                <dt className="font-semibold text-gray-900">Role</dt>
+                <dd className="mt-1 text-gray-600">{design.role.join(" · ")}</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-gray-900">Built with</dt>
+                <dd className="mt-1 text-gray-600">{design.tags.join(" · ")}</dd>
+              </div>
+            </dl>
+          )}
         </section>
 
         {/* Desktop shots */}
@@ -229,13 +231,15 @@ const DesignShot = () => {
         )}
 
         {/* Tags */}
-        <div className="mt-14 flex flex-wrap justify-center gap-2">
-          {design.tags.map((tag) => (
-            <span key={tag} className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
-              {tag}
-            </span>
-          ))}
-        </div>
+        {design.tags.length > 0 && (
+          <div className="mt-14 flex flex-wrap justify-center gap-2">
+            {design.tags.map((tag) => (
+              <span key={tag} className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </article>
 
       {/* More designs */}
