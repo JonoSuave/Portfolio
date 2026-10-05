@@ -41,7 +41,7 @@ const DesignShot = () => {
               <div className="text-sm leading-tight">
                 <p className="font-semibold">Jono Duncan</p>
                 <p className="text-gray-500">
-                  for {design.client} · {design.year}
+                  {design.client} · {design.year}
                 </p>
               </div>
             </div>
@@ -150,11 +150,11 @@ const DesignShot = () => {
               <Smartphone className="h-4 w-4" /> Mobile
             </h2>
             <div
-              className="mt-6 grid grid-cols-2 gap-x-5 gap-y-10 rounded-3xl p-6 sm:grid-cols-3 sm:p-10"
+              className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-10 rounded-3xl p-6 sm:p-10"
               style={{ backgroundColor: design.accent }}
             >
               {mobile.map((shot) => (
-                <figure key={shot.src}>
+                <figure key={shot.src} className="w-[calc(50%-0.625rem)] sm:w-[calc(33.333%-0.875rem)] sm:max-w-[260px]">
                   <PhoneFrame
                     src={shot.src}
                     alt={shot.alt}

@@ -26,6 +26,7 @@ export interface Design {
 
 const saj = "/designs/south-american-journeys";
 const tga = "/designs/tiny-grand-adventures";
+const rm = "/designs/resource-manager";
 
 export const designs: Design[] = [
   {
@@ -89,42 +90,42 @@ export const designs: Design[] = [
     ],
   },
   {
-    slug: "scs-resource-manager",
-    title: "SCS Works: Unit Entries",
-    client: "SCS Engineers",
+    slug: "resource-manager",
+    title: "Resource Manager: Unit Entries",
+    client: "Environmental engineering firm",
     year: "2026",
     summary:
       "A billing-period timesheet for logging personnel, vehicle and equipment units, designed for both the office and the field.",
     description: [
-      "Field staff at SCS Engineers log the units they use (people, vehicles, equipment) against projects every billing period. The old process lived in spreadsheets and email. Unit Entries brings it into SCS Works, the company's resource reservation platform.",
-      "On desktop it is a dense, spreadsheet-like grid: a frozen project column, a scrolling day grid, inline editing and project/task pickers. On a phone that layout falls apart, so the mobile view is redesigned around the same data: a compact unit grid, bottom sheets for filters and row details, and a sticky submit banner within thumb reach.",
+      "Field staff at a national environmental engineering firm log the units they use (people, vehicles, equipment) against projects every billing period. The old process lived in spreadsheets and email. Unit Entries brings it into the company's resource reservation platform and feeds the ERP's billing export.",
+      "On desktop it is a dense, spreadsheet-like grid: a frozen project column, a scrolling day grid, inline editing and project/task pickers. On a phone that layout falls apart, so the mobile view is redesigned around the same data: week tabs, a compact unit grid, bottom sheets for filters and row details, and submission status banners up front.",
+      "Client names, projects and people are blurred in these screens.",
     ],
     role: ["UI/UX design", "Full-stack build", "Mobile-first redesign"],
     tags: ["Next.js", "TypeScript", "Fluent UI", "Azure"],
-    accent: "#E9D7DA",
+    accent: "#DDE3EA",
     shots: [
-      // Add captures to public/designs/scs-resource-manager/ and list them here, e.g.
-      // { src: "/designs/scs-resource-manager/unit-entries-desktop.webp", alt: "...", device: "desktop" },
-      // { src: "/designs/scs-resource-manager/unit-entries-mobile.webp", alt: "...", device: "mobile" },
+      { src: `${rm}/unit-entries-desktop.webp`, alt: "Unit Entries desktop grid with frozen project columns and day grid", device: "desktop", caption: "Unit Entries: frozen project columns, scrolling day grid" },
+      { src: `${rm}/reservations-desktop.webp`, alt: "Grouped reservations table with dates, counts and status", device: "desktop", caption: "Grouped reservations across projects" },
+      { src: `${rm}/unit-entries-mobile.webp`, alt: "Unit Entries mobile view with submission banners and week tabs", device: "mobile", caption: "Unit Entries on mobile" },
     ],
   },
   {
-    slug: "scs-audit-app",
-    title: "SCS Project Audits",
-    client: "SCS Engineers",
+    slug: "project-audits",
+    title: "Project Quality Audits",
+    client: "Environmental engineering firm",
     year: "2026",
     summary:
       "Quarterly quality audits of project folders and deliverables, from audit form to remediation tracking.",
     description: [
-      "SCS Engineers audits a sample of projects every quarter against its quality standards. The Audit App replaces a manual spreadsheet process: projects are pulled from Vantagepoint each quarter, auditors work through a short yes/no form, and non-compliant projects flow to their project manager for remediation.",
-      "The interface is built for auditors who review many projects in a sitting: a filterable audits dashboard, a focused audit form with comments on each question, and clear status states from Not Started through Awaiting Remediation to Complete. Sibling apps for Phase One reports and officer-level review share the same design system.",
+      "An engineering firm audits a sample of projects every quarter against its quality standards. The Audit App replaces a manual spreadsheet process: projects are pulled from the ERP each quarter, auditors work through a short yes/no form, and non-compliant projects flow to their project manager for remediation.",
+      "The interface is built for auditors who review many projects in a sitting: a filterable audits dashboard, a focused audit form with comments on each question, and clear status states from Not Started through Awaiting Remediation to Complete. Sibling apps for specialised report types share the same design system.",
     ],
     role: ["UI/UX design", "Full-stack build"],
     tags: ["Next.js", "TypeScript", "shadcn/ui", "Azure"],
     accent: "#DCE8E4",
     shots: [
-      // Desktop only, e.g.
-      // { src: "/designs/scs-audit-app/audits-dashboard-desktop.webp", alt: "...", device: "desktop" },
+      // Desktop only. Screens must be anonymised (no client branding, people or projects).
     ],
   },
 ];
