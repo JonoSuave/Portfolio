@@ -25,6 +25,7 @@ export interface Design {
 }
 
 const saj = "/designs/south-american-journeys";
+const tga = "/designs/tiny-grand-adventures";
 
 export const designs: Design[] = [
   {
@@ -55,6 +56,36 @@ export const designs: Design[] = [
       { src: `${saj}/meet-mili-mobile.webp`, alt: "About the founder page on mobile", device: "mobile", caption: "Founder" },
       { src: `${saj}/plan-your-trip-mobile.webp`, alt: "Trip enquiry form on mobile", device: "mobile", caption: "Plan your trip" },
       { src: `${saj}/home-mobile-scroll.webp`, alt: "Home page on mobile, full scroll", device: "mobile", caption: "Home, full scroll", tall: true },
+    ],
+  },
+  {
+    slug: "tiny-grand-adventures",
+    title: "Tiny Grand Adventures",
+    client: "Tiny Grand Adventures",
+    year: "2026",
+    summary:
+      "A direct-booking site for Zen Haus, a tiny house near the Grand Canyon, built to win guests away from Airbnb fees.",
+    description: [
+      "Zen Haus had 200+ Airbnb reviews and a 4.92 rating but no home of its own. Every booking paid platform fees, and every guest relationship belonged to someone else. The goal was a site that feels as trustworthy as Airbnb while giving guests a reason to book direct.",
+      "The design leads with the house at dusk, then gets out of the way: a photo-first property page with live availability and a sticky booking bar on mobile, a plain-spoken Why Book Direct page, and a giveaway popup that grows the email list for repeat stays.",
+    ],
+    role: ["UI/UX design", "Full-stack build", "Booking and payments"],
+    tags: ["Next.js", "TypeScript", "Stripe", "Drizzle", "Framer Motion"],
+    accent: "#E8DCCB",
+    liveUrl: "https://www.tinygrandadventures.com/",
+    shots: [
+      { src: `${tga}/home-desktop.webp`, alt: "Zen Haus home page hero at dusk", device: "desktop", caption: "Home: the house at dusk, two clear actions" },
+      { src: `${tga}/home-desktop-scroll.webp`, alt: "Tiny Grand Adventures home page, full scroll", device: "desktop", caption: "Home page, full scroll", tall: true },
+      { src: `${tga}/zen-haus-desktop.webp`, alt: "Zen Haus property page with photo grid and availability", device: "desktop", caption: "Property page with photo grid and live availability" },
+      { src: `${tga}/why-book-direct-desktop.webp`, alt: "Why Book Direct page", device: "desktop", caption: "Why Book Direct: the case against platform fees" },
+      { src: `${tga}/giveaway-desktop.webp`, alt: "Win a Free Night email signup popup", device: "desktop", caption: "Giveaway popup that grows the email list" },
+      { src: `${tga}/contact-desktop.webp`, alt: "Contact form", device: "desktop", caption: "Contact" },
+      { src: `${tga}/home-mobile.webp`, alt: "Home page on mobile", device: "mobile", caption: "Home" },
+      { src: `${tga}/zen-haus-mobile.webp`, alt: "Property page on mobile with sticky booking bar", device: "mobile", caption: "Property + sticky Book Now" },
+      { src: `${tga}/giveaway-mobile.webp`, alt: "Giveaway popup on mobile", device: "mobile", caption: "Giveaway" },
+      { src: `${tga}/why-book-direct-mobile.webp`, alt: "Why Book Direct page on mobile", device: "mobile", caption: "Why Book Direct" },
+      { src: `${tga}/contact-mobile.webp`, alt: "Contact form on mobile", device: "mobile", caption: "Contact" },
+      { src: `${tga}/home-mobile-scroll.webp`, alt: "Home page on mobile, full scroll", device: "mobile", caption: "Home, full scroll", tall: true },
     ],
   },
   {
