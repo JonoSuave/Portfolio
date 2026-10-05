@@ -99,14 +99,13 @@ export const designs: Design[] = [
       "A billing-period timesheet for logging personnel, vehicle and equipment units, designed for both the office and the field.",
     description: [
       "Field staff at a national environmental engineering firm log the units they use (people, vehicles, equipment) against projects every billing period. The old process lived in spreadsheets and email. Unit Entries brings it into the company's resource reservation platform and feeds the ERP's billing export.",
-      "On desktop it is a dense, spreadsheet-like grid: a frozen project column, a scrolling day grid, inline editing and project/task pickers. On a phone that layout falls apart, so the mobile view is redesigned around the same data: week tabs, a compact unit grid, bottom sheets for filters and row details, and submission status banners up front.",
-      "Client names, projects and people are blurred in these screens.",
     ],
     role: ["UI/UX design", "Full-stack build", "Mobile-first redesign"],
     tags: ["Next.js", "TypeScript", "Fluent UI", "Azure"],
     accent: "#DDE3EA",
     shots: [
       { src: `${rm}/unit-entries-desktop.webp`, alt: "Unit Entries desktop grid with frozen project columns and day grid", device: "desktop", caption: "Unit Entries: frozen project columns, scrolling day grid" },
+      { src: `${rm}/new-reservation.gif`, alt: "Animated walkthrough of filling out the New Reservation form: dates, description and hours", device: "desktop", caption: "Filling out a New Reservation" },
       { src: `${rm}/reservations-desktop.webp`, alt: "Grouped reservations table with dates, counts and status", device: "desktop", caption: "Grouped reservations across projects" },
       { src: `${rm}/whats-new-panel.webp`, alt: "In-app What's New panel listing release notes", device: "detail", caption: "In-app What's New panel: release notes written for field staff, not developers" },
       { src: `${rm}/unit-entries-mobile.webp`, alt: "Unit Entries mobile view with submission banners and week tabs", device: "mobile", caption: "Unit Entries on mobile" },
