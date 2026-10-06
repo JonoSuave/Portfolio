@@ -157,7 +157,7 @@ export const designs: Design[] = [
     tags: ["Next.js", "TypeScript", "shadcn/ui", "Azure"],
     accent: "#DCE8E4",
     shots: [
-      { src: `${audit}/audits-dashboard-desktop.webp`, focus: { x: 0.4, y: 0.22, zoom: 2.4 }, alt: "Audits table with status badges for each project", device: "desktop", caption: "Audits dashboard" },
+      { src: `${audit}/audits-dashboard-desktop.webp`, focus: { x: 0.1, y: 0.24, zoom: 2.2 }, alt: "Audits table with status badges for each project", device: "desktop", caption: "Audits dashboard" },
       { src: `${audit}/audit-walkthrough.mp4`, poster: `${audit}/audit-walkthrough-poster.webp`, alt: "Animated walkthrough: claiming a project, answering audit questions with a comment, and the leave-without-saving prompt", device: "desktop", caption: "Claim a project, audit it, and never lose answers by accident" },
     ],
   },
