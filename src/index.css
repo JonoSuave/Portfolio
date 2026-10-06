@@ -74,3 +74,19 @@
       @apply bg-background text-foreground;
     }
   }
+  /* Mobile "zoom tour" for desktop screenshots: ease into the focus area, hold, ease back out. */
+  @keyframes pf-zoom-tour {
+    0%, 14% { transform: scale(1); }
+    36%, 66% { transform: scale(var(--pf-zoom, 2.4)); }
+    88%, 100% { transform: scale(1); }
+  }
+  @media (max-width: 639px) and (prefers-reduced-motion: no-preference) {
+    .pf-zoom-tour {
+      animation: pf-zoom-tour 9s ease-in-out infinite;
+      animation-play-state: paused;
+      will-change: transform;
+    }
+    .pf-zoom-tour.is-visible {
+      animation-play-state: running;
+    }
+  }

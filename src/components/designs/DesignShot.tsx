@@ -75,6 +75,8 @@ const DesignShot = () => {
             <div className="relative mx-auto max-w-5xl">
               <BrowserFrame
                 src={heroDesktop.src}
+                poster={heroDesktop.poster}
+                focus={heroDesktop.focus}
                 alt={heroDesktop.alt}
                 onClick={() => open(heroDesktop)}
                 className="rounded-b-none"
@@ -153,6 +155,8 @@ const DesignShot = () => {
                 <figure key={shot.src}>
                   <BrowserFrame
                     src={shot.src}
+                    poster={shot.poster}
+                    focus={shot.focus}
                     alt={shot.alt}
                     tall={shot.tall}
                     onClick={shot.tall ? undefined : () => open(shot)}
