@@ -77,6 +77,7 @@ const DesignShot = () => {
                 src={heroDesktop.src}
                 poster={heroDesktop.poster}
                 focus={heroDesktop.focus}
+                zoomSteps={heroDesktop.zoomSteps}
                 alt={heroDesktop.alt}
                 onClick={() => open(heroDesktop)}
                 className="rounded-b-none"
@@ -157,6 +158,7 @@ const DesignShot = () => {
                     src={shot.src}
                     poster={shot.poster}
                     focus={shot.focus}
+                    zoomSteps={shot.zoomSteps}
                     alt={shot.alt}
                     tall={shot.tall}
                     onClick={shot.tall ? undefined : () => open(shot)}

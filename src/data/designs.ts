@@ -12,6 +12,15 @@ export interface Shot {
   poster?: string;
   /** Where desktop stills zoom in on phones (fractions of the image), and how far. */
   focus?: { x: number; y: number; zoom?: number };
+  /** Video only: zoom steps on phones, keyed to playback time in seconds. */
+  zoomSteps?: ZoomStep[];
+}
+
+export interface ZoomStep {
+  at: number;
+  x: number;
+  y: number;
+  zoom: number;
 }
 
 export interface Design {
@@ -135,7 +144,12 @@ export const designs: Design[] = [
     accent: "#DDE3EA",
     shots: [
       { src: `${rm}/unit-entries-desktop.webp`, focus: { x: 0.2, y: 0.3, zoom: 2.4 }, alt: "Unit Entries desktop grid with frozen project columns and day grid", device: "desktop", caption: "Unit Entries: frozen project columns, scrolling day grid" },
-      { src: `${rm}/new-reservation.mp4`, poster: `${rm}/new-reservation-poster.webp`, alt: "Walkthrough of filling out the New Reservation form: dates, description and hours", device: "desktop", caption: "Filling out a New Reservation" },
+      { src: `${rm}/new-reservation.mp4`, poster: `${rm}/new-reservation-poster.webp`, zoomSteps: [
+        { at: 0, x: 0, y: 0, zoom: 1 },
+        { at: 1.6, x: 0, y: 0, zoom: 2 },
+        { at: 7, x: 0, y: 1, zoom: 2 },
+        { at: 12.5, x: 0, y: 1, zoom: 1 },
+      ], alt: "Walkthrough of filling out the New Reservation form: dates, description and hours", device: "desktop", caption: "Filling out a New Reservation" },
       { src: `${rm}/reservations-desktop.webp`, focus: { x: 0.62, y: 0.2, zoom: 2.6 }, alt: "Grouped reservations table with dates, counts and status", device: "desktop", caption: "Grouped reservations across projects" },
       { src: `${rm}/whats-new-panel.webp`, alt: "In-app What's New panel listing release notes", device: "detail", caption: "What's New panel: release notes written for field staff, not developers" },
       { src: `${rm}/whats-new-panel-dark.webp`, alt: "The What's New panel in dark mode", device: "detail", caption: "The same panel in dark mode" },

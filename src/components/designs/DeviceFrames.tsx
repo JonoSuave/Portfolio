@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import AutoVideo from "./AutoVideo";
+import type { ZoomStep } from "@/data/designs";
 
 interface FrameProps {
   src: string;
@@ -14,6 +15,8 @@ interface FrameProps {
   poster?: string;
   /** Mobile zoom target, as fractions of the image (0-1), and zoom level. */
   focus?: { x: number; y: number; zoom?: number };
+  /** Video zoom steps on phones, keyed to playback time. */
+  zoomSteps?: ZoomStep[];
 }
 
 /** Marks the element visible while on screen, so its CSS zoom tour only runs then. */
@@ -34,7 +37,7 @@ const useInView = <T extends HTMLElement>() => {
   return ref;
 };
 
-export const BrowserFrame = ({ src, alt, tall, onClick, className, cover, poster, focus }: FrameProps) => {
+export const BrowserFrame = ({ src, alt, tall, onClick, className, cover, poster, focus, zoomSteps }: FrameProps) => {
   const video = src.endsWith(".mp4");
   // Desktop stills zoom into their focus area on phones, where the full screen is too small to read.
   const zoomTour = !video && !tall && !cover;
@@ -70,8 +73,8 @@ export const BrowserFrame = ({ src, alt, tall, onClick, className, cover, poster
         )}
       >
         {video ? (
-          <div className="aspect-[16/10] w-full bg-white">
-            <AutoVideo src={src} poster={poster} label={alt} />
+          <div className="aspect-[16/10] w-full overflow-hidden bg-white">
+            <AutoVideo src={src} poster={poster} label={alt} zoomSteps={zoomSteps} />
           </div>
         ) : (
           <img
