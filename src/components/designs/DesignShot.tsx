@@ -6,6 +6,7 @@ import { getDesign, publishedDesigns, shotsFor, type Shot } from "@/data/designs
 import DesignsLayout from "./DesignsLayout";
 import DesignCard from "./DesignCard";
 import Lightbox from "./Lightbox";
+import AutoVideo from "./AutoVideo";
 import { BrowserFrame, PhoneFrame } from "./DeviceFrames";
 
 const DesignShot = () => {
@@ -223,7 +224,13 @@ const DesignShot = () => {
                     aria-label={`Enlarge: ${shot.alt}`}
                     className="block w-full cursor-zoom-in overflow-hidden rounded-2xl shadow-[0_24px_50px_-18px_rgba(15,23,42,0.45)] ring-1 ring-black/5"
                   >
-                    <img src={shot.src} alt={shot.alt} loading="lazy" className="block w-full" />
+                    {shot.src.endsWith(".mp4") ? (
+                      <div className="w-full bg-white" style={{ aspectRatio: shot.aspect }}>
+                        <AutoVideo src={shot.src} poster={shot.poster} label={shot.alt} />
+                      </div>
+                    ) : (
+                      <img src={shot.src} alt={shot.alt} loading="lazy" className="block w-full" />
+                    )}
                   </button>
                   {shot.caption && (
                     <figcaption className="mt-3 text-center text-sm font-medium text-gray-800">

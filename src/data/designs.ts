@@ -14,6 +14,8 @@ export interface Shot {
   focus?: { x: number; y: number; zoom?: number };
   /** Video only: zoom steps on phones, keyed to playback time in seconds. */
   zoomSteps?: ZoomStep[];
+  /** Width / height, for detail videos whose frame shape isn't a screen. */
+  aspect?: number;
 }
 
 export interface ZoomStep {
@@ -172,7 +174,14 @@ export const designs: Design[] = [
     accent: "#DCE8E4",
     shots: [
       { src: `${audit}/audits-dashboard-desktop.webp`, focus: { x: 0.1, y: 0.24, zoom: 2.2 }, alt: "Audits table with status badges for each project", device: "desktop", caption: "Audits dashboard" },
-      { src: `${audit}/audit-walkthrough.mp4`, poster: `${audit}/audit-walkthrough-poster.webp`, alt: "Animated walkthrough: claiming a project, answering audit questions with a comment, and the leave-without-saving prompt", device: "desktop", caption: "Claim a project, audit it, and never lose answers by accident" },
+      { src: `${audit}/audit-walkthrough.mp4`, poster: `${audit}/audit-walkthrough-poster.webp`, zoomSteps: [
+        { at: 0, x: 0.5, y: 0.5, zoom: 1 },
+        { at: 1.4, x: 1, y: 0.45, zoom: 2 },
+        { at: 5.6, x: 0.5, y: 0.3, zoom: 2 },
+        { at: 12.6, x: 0.5, y: 0.6, zoom: 2 },
+        { at: 17.5, x: 0.5, y: 0.6, zoom: 1 },
+      ], alt: "Animated walkthrough: claiming a project, answering audit questions with a comment, and the leave-without-saving prompt", device: "desktop", caption: "Claim a project, audit it, and never lose answers by accident" },
+      { src: `${audit}/ball-bounce.mp4`, poster: `${audit}/ball-bounce-poster.webp`, aspect: 966 / 326, alt: "A basketball drops in and bounces next to the auditor's name when a project is claimed", device: "detail", caption: "Ball in court: claiming a project drops the ball in the auditor's court" },
     ],
   },
 ];
