@@ -182,6 +182,7 @@ export const designs: Design[] = [
         { at: 17.5, x: 0.5, y: 0.6, zoom: 1 },
       ], alt: "Animated walkthrough: claiming a project, answering audit questions with a comment, and the leave-without-saving prompt", device: "desktop", caption: "Claim a project, audit it, and never lose answers by accident" },
       { src: `${audit}/ball-bounce.mp4`, poster: `${audit}/ball-bounce-poster.webp`, aspect: 966 / 326, alt: "A basketball drops in and bounces next to the auditor's name when a project is claimed", device: "detail", caption: "Ball in court: claiming a project drops the ball in the auditor's court" },
+      { src: `${audit}/ball-pass.mp4`, poster: `${audit}/ball-pass-poster.webp`, aspect: 1264 / 318, alt: "The basketball arcs across the row from the auditor to the project manager when an audit comes back non-compliant", device: "detail", caption: "Ball in court: a non-compliant audit passes the ball to the project manager" },
     ],
   },
 ];
